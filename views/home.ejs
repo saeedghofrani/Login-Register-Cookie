@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./common/header.ejs') %>
+        <link rel="stylesheet" href="/style/home.css">
+        <title>HOME</title>
+</head>
+
+<body class="bg-light p-4">
+    <%- include('./common/navbar.ejs', {activeHome: 'active', activeProfile: ''}) %>
+        <%- include('./common/scripts.ejs') %>
+            <script src="/script/home.js"></script>
+</body>
+
+</html>

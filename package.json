@@ -1,0 +1,43 @@
+{
+  "dependencies": {
+    "autoprefixer": "^6.3.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "uuid": "^8.3.2"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      }
+    }
+  },
+  "name": "saeed_ghofrani_hw12_maktab62",
+  "version": "1.0.0",
+  "main": "./server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saeedghofrani/Saeed_Ghofrani_hw12_maktab62.git"
+  },
+  "keywords": [
+    "rigester",
+    "login"
+  ],
+  "author": "saeed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saeedghofrani/Saeed_Ghofrani_hw12_maktab62/issues"
+  },
+  "homepage": "https://github.com/saeedghofrani/Saeed_Ghofrani_hw12_maktab62#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

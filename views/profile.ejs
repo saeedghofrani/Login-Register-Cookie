@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./common/header.ejs') %>
+    <link rel="stylesheet" href="/style/profile.css" />
+    <script src="/script/profile.js"></script>
+    <title>PROFILE</title>
+</head>
+
+<body class="bg-light p-4 m-0">
+  <%- include('./common/navbar.ejs', {activeHome: '' , activeProfile: 'active' }) %>
+    <div class="container">
+      <div class="main-body">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="user"
+                    class="rounded-circle p-1 bg-primary" width="110" />
+                  <div class="mt-3">
+                    <h4 id="userNameCard">
+                      <%= data.username %>
+                    </h4>
+                    <p class="text-secondary mb-1">Full Stack Developer</p>
+                    <p class="text-muted font-size-sm">
+                      Bay Area, San Francisco, CA
+                    </p>
+                    <button class="btn btn-primary">Follow</button>
+                    <button class="btn btn-outline-primary">Message</button>
+                  </div>
+                </div>
+                <hr class="my-4" />
+                <ul class="list-group list-group-flush">
+                  <li class="
+                      list-group-item
+                      d-flex
+                      justify-content-around
+                      align-items-center
+                      flex-wrap
+                    ">
+                    <h6 class="mb-0">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                      </path>
+                      Role :<span class="ml-5 text-right">
+                        <%= data.role %>
+                      </span>
+                    </h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-body">
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">User Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input id="username" type="text" class="form-control" value="<%= data.username %> " required
+                      disabled readonly />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input id="email" type="text" class="form-control" value="<%= data.email %>" required disabled
+                      readonly />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Password</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input id="password" type="text" class="form-control" value="<%= data.password %> " required
+                      disabled readonly />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Gender</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input id="gender" type="text" class="form-control" value="<%= data.gender %>" required disabled
+                      readonly />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Address</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" value="Bay Area, San Francisco, CA" required disabled
+                      readonly />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Phone</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <input type="text" class="form-control" value="(775)976-6794" required disabled readonly />
+                  </div>
+                </div>
+                <div class="row justify-content-center align-content-center">
+                  <div class="row justify-content-center align-content-center">
+                    <div class="col-sm-9 text-secondary m-0">
+                      <input id="saveBtn" type="button" class="btn btn-success px-4 w-100" value="Save Changes" />
+                    </div>
+                  </div>
+                  <div class="row justify-content-center align-content-center mt-3">
+                    <div class="col-sm-9 text-secondary m-0">
+                      <input id="edit" type="button" class="btn btn-primary px-4 w-100" value="Edit" />
+                    </div>
+                  </div>
+                  <% if (data.role==='admin' ) { %>
+                    <div class="row justify-content-center align-content-center mt-3">
+                      <div class="col-sm-9 text-secondary m-0">
+                        <a href="http://localhost:4000/adminProfile" class="btn btn-primary px-4 w-100">admin
+                          Profile</a>
+                      </div>
+                    </div>
+                    <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 id="done" class="text-success text-center">DONE</h2>
+      </div>
+    </div>
+    <script src="/script/profile.js"></script>
+    <%- include('./common/scripts.ejs') %>
+      <script src="/script/home.js"></script>
+</body>
+
+</html>

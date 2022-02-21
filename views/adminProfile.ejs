@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./common/header.ejs') %>
+        <title>adminProfile</title>
+</head>
+
+<body class="bg-light p-4">
+    <%- include('./common/navbar.ejs', {activeHome: 'active' , activeProfile: '' }) %>
+        <table class="ui single line table">
+
+            <thead>
+                <tr>
+                    <th>
+                        <%= objKeys[0] %>
+                    </th>
+                    <th>
+                        <%= objKeys[1] %>
+                    </th>
+                    <th>
+                        <%= objKeys[5] %>
+                    </th>
+                    <th>
+                        <%= objKeys[3] %>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < data.length; i++) { %>
+                    <tr id=tr<%=i %> >
+                        <td>
+                            <p class="username p-1 inp_admin_profile">
+                                <%= data[i].username %>
+                            </p>
+                        </td>
+                        <td>
+                            <input type="text" name="" class="email p-1 inp_admin_profile" value="<%= data[i].email %>"
+                                disabled readonly>
+                        </td>
+                        <td>
+                            <input type="text" name="" class="role p-1 inp_admin_profile" value="<%= data[i].role %>"
+                                disabled readonly>
+                        </td>
+                        <td>
+                            <input type="text" name="" class="gender p-1 inp_admin_profile"
+                                value="<%= data[i].gender %>" disabled readonly>
+                        </td>
+                    </tr>
+                    <% } %>
+
+            </tbody>
+        </table>
+        <button id="editAdmin" class="fluid ui button inverted red">EDIT</button>
+        <button id="saveAdmin" class="fluid ui button inverted green mt-4">SAVE</button>
+        <%- include('./common/scripts.ejs') %>
+            <script src="/script/adminProfile.js"></script>
+            <script src="/script/home.js"></script>
+</body>
+
+</html>
